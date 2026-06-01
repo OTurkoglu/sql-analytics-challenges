@@ -29,11 +29,17 @@ query_optimisation/  # Performance patterns, early filtering, pre-aggregation
 | File | Concept |
 |------|---------|
 | 01_revenue_by_status.sql | GROUP BY, percentage of total, CROSS JOIN |
+| 02_cohort_retention.sql | Cohort retention analysis, acquisition cohorts, month-over-month retention rate |
 
 ### Query Optimisation
 | File | Concept |
 |------|---------|
 | 01_optimising_joins.sql | Filter early, pre-aggregate before joins, avoid functions on columns |
+
+### Data Quality
+| File | Concept |
+|------|---------|
+| 01_detect_data_quality_issues.sql | Duplicate detection, orphan records, null analysis, late arriving data, revenue anomalies |
 
 ## Principles Applied
 
@@ -43,11 +49,13 @@ query_optimisation/  # Performance patterns, early filtering, pre-aggregation
 - Use COALESCE to handle nulls from LEFT JOINs explicitly
 - Use NULLIF to avoid division by zero in percentage calculations
 - Comment every challenge with concept, question and approach
+- Data quality checks reflect patterns automated by observability tools like Monte Carlo in production
 
 ## Tech Stack
 
 - SQL dialect: BigQuery / PostgreSQL compatible
 - Dataset: Jaffle Shop Classic by dbt Labs
+- See TOOLS.md for full modern data stack reference
 
 ## About
 
